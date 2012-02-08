@@ -30,6 +30,7 @@ d = {
 
 print 'Starting json...'
 print json.dumps(d)
+print len(json.dumps(d))
 start = time.time()
 for i in xrange(1000000):
     json.dumps(d)
@@ -37,6 +38,7 @@ print 'done:', time.time() - start
 
 print 'Starting simplejson...'
 print simplejson.dumps(d)
+print len(simplejson.dumps(d))
 start = time.time()
 for i in xrange(1000000):
     simplejson.dumps(d)
@@ -44,29 +46,49 @@ print 'done:', time.time() - start
 
 print 'Starting cjson...'
 print cjson.encode(d)
+print len(cjson.encode(d))
 start = time.time()
 for i in xrange(1000000):
     cjson.encode(d)
 print 'done:', time.time() - start
 
-print 'Starting pickle...'
+print 'Starting pickle 0 ...'
 print pickle.dumps(d)
+print len(pickle.dumps(d))
 start = time.time()
 for i in xrange(1000000):
     pickle.dumps(d)
 print 'done:', time.time() - start
 
+print 'Starting pickle 1 ...'
+print pickle.dumps(d, 1)
+print len(pickle.dumps(d, 1))
+start = time.time()
+for i in xrange(1000000):
+    pickle.dumps(d, 1)
+print 'done:', time.time() - start
+
+print 'Starting pickle 2 ...'
+print pickle.dumps(d, 2)
+print len(pickle.dumps(d, 2))
+start = time.time()
+for i in xrange(1000000):
+    pickle.dumps(d, 2)
+print 'done:', time.time() - start
+
 print 'Starting wbin...'
 print wbin.serialize(d)
+print len(wbin.serialize(d))
 start = time.time()
 for i in xrange(1000000):
     wbin.serialize(d)
 print 'done:', time.time() - start
 
-print 'Starting demjson...'
-print demjson.encode(d)
-start = time.time()
-for i in xrange(1000000):
-    demjson.encode(d)
-print 'done:', time.time() - start
+#print 'Starting demjson...'
+#print demjson.encode(d)
+#print len(demjson.encode(d))
+#start = time.time()
+#for i in xrange(1000000):
+#    demjson.encode(d)
+#print 'done:', time.time() - start
 
