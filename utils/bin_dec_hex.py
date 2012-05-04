@@ -64,4 +64,14 @@ if __name__ == '__main__':
     print bin2dec('01111010011110100111101001111010')
     print bin2dec('01111010111110100111101001111010')
     print dec2bin('2054847098')
+    print hex2dec('000000000000000000000000001C2DF9')
+    import time
+    now = time.time()
+    print now
+    print int(now)
+    htime = dec2hex(now)
+    print htime
+    print hex2dec(htime)
+    print hex2bin('0xffffffff')
+    print dec2bin('5')
 

@@ -54,3 +54,5 @@ elif (REDIS_SETGET or REDIS_HSET):
     size = int(r.info()['used_memory'])
 
 print '%s bytes, %s MB' % (size, size / 1024 / 1024)
+
+
